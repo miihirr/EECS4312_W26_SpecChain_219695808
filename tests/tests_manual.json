@@ -1,16 +1,296 @@
-
 {
   "tests": [
     {
-      "test_id": "T_auto_1",
+      "test_id": "T_manual_1a",
       "requirement_id": "FR1",
-      "scenario": "Workout Logging Stability",
+      "scenario": "Sleepcast audio continues when screen locks",
       "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
+        "Open Headspace and navigate to Sleep > Sleepcasts",
+        "Select The Garden and begin playback",
+        "Lock the device screen within 10 seconds of starting"
       ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+      "expected_result": "Sleepcast audio continues without interruption at the same volume after the screen locks."
+    },
+    {
+      "test_id": "T_manual_1b",
+      "requirement_id": "FR1",
+      "scenario": "Sleepcast audio continues when notification arrives",
+      "steps": [
+        "Play a Sleepcast with Do Not Disturb disabled",
+        "Send a test notification to the device from another app while audio is playing"
+      ],
+      "expected_result": "Sleepcast audio does not pause, stop, or decrease in volume when the notification arrives."
+    },
+    {
+      "test_id": "T_manual_2a",
+      "requirement_id": "FR2",
+      "scenario": "Sleep timer stops audio at configured time with fade",
+      "steps": [
+        "Start a Sleepcast and set the sleep timer to 5 minutes",
+        "Wait 5 minutes without interacting with the device"
+      ],
+      "expected_result": "Audio begins fading at the 5-minute mark and is completely silent within 5 minutes 30 seconds; no abrupt cutoff."
+    },
+    {
+      "test_id": "T_manual_2b",
+      "requirement_id": "FR2",
+      "scenario": "Sleep timer does not stop audio earlier than configured",
+      "steps": [
+        "Set the sleep timer to 60 minutes",
+        "Monitor playback for 45 minutes without interaction"
+      ],
+      "expected_result": "Audio is still playing at the 45-minute mark and has not stopped before the configured 60-minute timer expires."
+    },
+    {
+      "test_id": "T_manual_3a",
+      "requirement_id": "FR3",
+      "scenario": "Downloaded Sleepcast plays in airplane mode",
+      "steps": [
+        "Download a Sleepcast while connected to Wi-Fi",
+        "Enable airplane mode",
+        "Open the Sleepcast library and tap the downloaded Sleepcast"
+      ],
+      "expected_result": "Sleepcast begins playing within 5 seconds and plays completely without buffering or a network error message."
+    },
+    {
+      "test_id": "T_manual_3b",
+      "requirement_id": "FR3",
+      "scenario": "Downloaded sleep sounds play in airplane mode",
+      "steps": [
+        "Download a sleep sound track while connected to Wi-Fi",
+        "Toggle airplane mode on",
+        "Navigate to Sleep > Sounds and select the downloaded track"
+      ],
+      "expected_result": "Sleep sound plays in full without any network-required error or interruption."
+    },
+    {
+      "test_id": "T_manual_4a",
+      "requirement_id": "FR4",
+      "scenario": "Streak preserved after simulated server outage",
+      "steps": [
+        "Complete a meditation session while the backend is in a maintenance window (simulated by blocking the API endpoint)",
+        "Restore backend connectivity",
+        "Reopen the app and view the streak counter"
+      ],
+      "expected_result": "Streak counter reflects the completed session and has not been reset or decremented."
+    },
+    {
+      "test_id": "T_manual_4b",
+      "requirement_id": "FR4",
+      "scenario": "Support can restore streak after verified outage",
+      "steps": [
+        "Identify a day on which a server incident occurred in the incident log",
+        "Submit a streak restoration request in-app referencing the incident date",
+        "Wait for support response within 5 business days and verify streak"
+      ],
+      "expected_result": "Streak is restored to the value it had before the server incident within 5 business days."
+    },
+    {
+      "test_id": "T_manual_5a",
+      "requirement_id": "FR5",
+      "scenario": "Short session variant is available for every course session",
+      "steps": [
+        "Open any multi-day Headspace course",
+        "Open a session within the course",
+        "Look for a session-length selector or Short variant option"
+      ],
+      "expected_result": "A session-length selector is present showing at minimum a 5-minute short option alongside the original length."
+    },
+    {
+      "test_id": "T_manual_5b",
+      "requirement_id": "FR5",
+      "scenario": "Short variant plays a complete condensed meditation",
+      "steps": [
+        "Select the 5-minute short variant of a course session",
+        "Play the session to completion"
+      ],
+      "expected_result": "The session plays for approximately 5 minutes and contains a complete beginning, middle, and end without abrupt cutoff."
+    },
+    {
+      "test_id": "T_manual_6a",
+      "requirement_id": "FR6",
+      "scenario": "Completed course is removed from primary recommendation",
+      "steps": [
+        "Complete all sessions in the Basics 10-day course",
+        "Navigate to the home screen and observe the recommendation feed"
+      ],
+      "expected_result": "The Basics 10-day course does not appear in the top recommended items on the home screen."
+    },
+    {
+      "test_id": "T_manual_6b",
+      "requirement_id": "FR6",
+      "scenario": "Higher-level course is recommended after beginner completion",
+      "steps": [
+        "Mark a beginner course as complete",
+        "Open the home screen recommendation section"
+      ],
+      "expected_result": "At least one intermediate or advanced course appears in the recommendation feed on the home screen following course completion."
+    },
+    {
+      "test_id": "T_manual_7a",
+      "requirement_id": "FR7",
+      "scenario": "Renewal notification sent 7 days before billing",
+      "steps": [
+        "Note the subscription renewal date",
+        "Check notification inbox 7 days before the renewal date"
+      ],
+      "expected_result": "A push notification is received stating the renewal date, the charge amount, and containing a link to subscription management."
+    },
+    {
+      "test_id": "T_manual_7b",
+      "requirement_id": "FR7",
+      "scenario": "Renewal email sent 7 days before billing",
+      "steps": [
+        "Note the subscription renewal date",
+        "Check the email address associated with the account 7 days before renewal"
+      ],
+      "expected_result": "A renewal reminder email is received containing the renewal date, charge amount, and a link to manage the subscription."
+    },
+    {
+      "test_id": "T_manual_8a",
+      "requirement_id": "FR8",
+      "scenario": "Cancel subscription within 3 taps from home screen",
+      "steps": [
+        "From the home screen tap the profile or account icon",
+        "Tap Subscription in account settings",
+        "Look for and tap Cancel Subscription"
+      ],
+      "expected_result": "A Cancel Subscription button is visible on screen within 3 taps of the home screen and initiates cancellation without redirecting to an external browser."
+    },
+    {
+      "test_id": "T_manual_8b",
+      "requirement_id": "FR8",
+      "scenario": "Cancellation completes without external website visit",
+      "steps": [
+        "Navigate to the cancellation screen within the app",
+        "Follow the in-app cancellation flow to completion"
+      ],
+      "expected_result": "Subscription is cancelled entirely within the app with no step requiring the user to open a web browser or contact support."
+    },
+    {
+      "test_id": "T_manual_9a",
+      "requirement_id": "FR9",
+      "scenario": "Audio continues after app is backgrounded on Android",
+      "steps": [
+        "Start playing a guided meditation on an Android device",
+        "Press the home button to background the app",
+        "Wait 3 minutes then return to Headspace"
+      ],
+      "expected_result": "Audio has been playing continuously during the 3-minute background period; the playback position has advanced by approximately 3 minutes."
+    },
+    {
+      "test_id": "T_manual_9b",
+      "requirement_id": "FR9",
+      "scenario": "Background audio survives switching to messaging app",
+      "steps": [
+        "Start a Headspace meditation session",
+        "Open a messaging app and send a message (approximately 2 minutes)",
+        "Return to Headspace"
+      ],
+      "expected_result": "Meditation audio has continued playing uninterrupted during the time spent in the messaging app."
+    },
+    {
+      "test_id": "T_manual_10a",
+      "requirement_id": "FR10",
+      "scenario": "Session history restored after device change",
+      "steps": [
+        "Note the total session count and streak on the original device",
+        "Sign in to Headspace on a new Android device",
+        "Wait 2 minutes for sync to complete"
+      ],
+      "expected_result": "The new device displays the same session count and streak value as the original device."
+    },
+    {
+      "test_id": "T_manual_10b",
+      "requirement_id": "FR10",
+      "scenario": "Course progress restored after device change",
+      "steps": [
+        "Complete 7 sessions of a 10-day course on the original device",
+        "Sign in to Headspace on a new device and navigate to the course"
+      ],
+      "expected_result": "The course shows 7 of 10 sessions completed, matching the progress recorded on the original device."
+    },
+    {
+      "test_id": "T_manual_11a",
+      "requirement_id": "FR11",
+      "scenario": "Mood check-in response influences first recommendation",
+      "steps": [
+        "Open Headspace and complete the mood check-in reporting anxious",
+        "Observe the first item in the recommendation feed"
+      ],
+      "expected_result": "The first recommended item is tagged with a label indicating it was recommended because of the anxious mood report."
+    },
+    {
+      "test_id": "T_manual_11b",
+      "requirement_id": "FR11",
+      "scenario": "Different moods produce different top recommendations",
+      "steps": [
+        "Complete mood check-in reporting tired on one session",
+        "On a subsequent session complete mood check-in reporting focused",
+        "Compare the top recommendation in each session"
+      ],
+      "expected_result": "The top recommendation differs between the tired session and the focused session, showing that mood input affects content selection."
+    },
+    {
+      "test_id": "T_manual_12a",
+      "requirement_id": "FR12",
+      "scenario": "New Sleepcasts visible in Sleep section monthly",
+      "steps": [
+        "Open the Sleep tab",
+        "Navigate to a New or Recently Added section in the Sleepcast library"
+      ],
+      "expected_result": "At least 2 Sleepcasts with a publication date within the current calendar month are visible in the New section."
+    },
+    {
+      "test_id": "T_manual_12b",
+      "requirement_id": "FR12",
+      "scenario": "New Sleepcasts remain on home screen for 14 days",
+      "steps": [
+        "Note the publication date of a newly released Sleepcast",
+        "Check the home screen on days 1, 7, and 14 after publication"
+      ],
+      "expected_result": "The new Sleepcast is visible in a prominent position on the home screen on all three check days."
+    },
+    {
+      "test_id": "T_manual_13a",
+      "requirement_id": "FR13",
+      "scenario": "Flagging a recommendation removes it for 30 days",
+      "steps": [
+        "Identify a recommended session on the home screen",
+        "Tap the Not for me or dismiss option on the session",
+        "Check the recommendation feed daily for 30 days"
+      ],
+      "expected_result": "The flagged session does not appear in the recommendation feed at any point during the 30-day period."
+    },
+    {
+      "test_id": "T_manual_13b",
+      "requirement_id": "FR13",
+      "scenario": "Flagging confirmation is displayed instantly",
+      "steps": [
+        "Tap Not for me on any recommended session"
+      ],
+      "expected_result": "A confirmation message appears immediately acknowledging the feedback and stating the session has been removed from recommendations."
+    },
+    {
+      "test_id": "T_manual_14a",
+      "requirement_id": "FR14",
+      "scenario": "Landscape layout renders on Android tablet",
+      "steps": [
+        "Open Headspace on an Android tablet with a screen diagonal of at least 7 inches",
+        "Rotate the device to landscape orientation",
+        "Navigate to the meditation home screen"
+      ],
+      "expected_result": "The UI renders in a two-column or side-by-side landscape layout without any portrait-only constraints, cropping, or overflow."
+    },
+    {
+      "test_id": "T_manual_14b",
+      "requirement_id": "FR14",
+      "scenario": "Landscape layout supports playback controls",
+      "steps": [
+        "Place a 7-inch+ Android tablet in landscape mode",
+        "Begin playing a Sleepcast"
+      ],
+      "expected_result": "All playback controls including pause, timer, and volume are accessible and functional in the landscape layout without requiring portrait rotation."
     }
   ]
 }

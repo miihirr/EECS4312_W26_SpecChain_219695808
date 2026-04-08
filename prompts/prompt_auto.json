@@ -1,3 +1,20 @@
 {
-    "prompt": ""
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "pipeline_stage": "review_grouping_and_persona_generation",
+  "review_grouping_prompt": {
+    "system": "You are a software requirements engineer specializing in mobile app user research. You will be given a batch of cleaned app store reviews and must group them into thematically coherent clusters. Each group should represent a distinct user concern or usage pattern. Return the groups in structured JSON format.",
+    "user_template": "Below are {n} cleaned user reviews for the Headspace meditation app. Each review has an id and text field. Group these reviews into exactly 5 thematic clusters. For each cluster, provide:\n- group_id: a unique identifier (A1 through A5)\n- theme: a short descriptive name for the cluster theme\n- review_ids: list of review ids that belong to this cluster\n- example_reviews: 2-3 representative review texts\n\nReviews:\n{reviews_json}\n\nRespond ONLY with valid JSON matching the structure: {\"groups\": [{\"group_id\": ..., \"theme\": ..., \"review_ids\": [...], \"example_reviews\": [...]}]}"
+  },
+  "persona_generation_prompt": {
+    "system": "You are a software requirements engineer. Based on a group of user reviews with a shared theme, create a structured user persona that summarizes the typical user in this group. The persona must be grounded in the review evidence provided and must not include unsupported assumptions.",
+    "user_template": "Below is a review group for the Headspace app:\n\nGroup ID: {group_id}\nTheme: {theme}\nExample reviews:\n{example_reviews}\n\nCreate a structured user persona in JSON format with the following fields:\n- id: persona identifier\n- name: a descriptive name for the persona type\n- description: 2-3 sentence description of the user\n- derived_from_group: the group_id\n- goals: list of 3 user goals inferred from the reviews\n- pain_points: list of 3-4 pain points explicitly mentioned in reviews\n- context: list of 2-3 contextual descriptions of when/how this user uses the app\n- constraints: list of 2-3 system constraints implied by the pain points\n- evidence_reviews: list of review ids used as evidence\n\nRespond ONLY with valid JSON."
+  },
+  "spec_generation_prompt": {
+    "system": "You are a software requirements engineer. Based on a user persona derived from real app reviews, generate a formal functional requirement for the software system. Requirements must be specific, measurable, and testable.",
+    "user_template": "Based on the following user persona for the Headspace app:\n\nPersona: {persona_name}\nDescription: {persona_description}\nPain Points: {pain_points}\nConstraints: {constraints}\n\nWrite a formal functional requirement including:\n- Requirement ID (FR_auto_N)\n- Description: a single sentence starting with 'The system shall...'\n- Source Persona\n- Traceability to review group\n- Acceptance Criteria in Given-When-Then format\n\nRespond in Markdown format."
+  },
+  "test_generation_prompt": {
+    "system": "You are a software QA engineer. Based on a formal functional requirement for the Headspace app, generate at least 2 structured test scenarios. Each test must have clear steps and a verifiable expected result.",
+    "user_template": "For the following requirement:\n\nRequirement ID: {req_id}\nDescription: {description}\nAcceptance Criteria: {acceptance_criteria}\n\nGenerate 2 test scenarios in JSON format. Each test must include:\n- test_id: unique identifier (T_auto_Na and T_auto_Nb)\n- requirement_id: the requirement this test validates\n- scenario: a short scenario name\n- steps: ordered list of test steps\n- expected_result: the verifiable outcome\n\nRespond ONLY with valid JSON."
+  }
 }

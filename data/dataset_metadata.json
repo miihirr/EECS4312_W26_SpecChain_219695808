@@ -1,0 +1,31 @@
+{
+  "app_name": "Headspace",
+  "app_store": "Google Play Store",
+  "app_package": "com.getsomeheadspace.android",
+  "collection_method": "Manual export using google-play-scraper Python library (version 1.2.7). Reviews were collected in multiple batches across the review date range.",
+  "collection_date": "2026-03-20",
+  "date_range": {
+    "earliest": "2024-01-05",
+    "latest": "2025-12-17"
+  },
+  "dataset_size": {
+    "raw": 200,
+    "clean": 200,
+    "skipped_too_short": 0,
+    "skipped_duplicate": 0
+  },
+  "cleaning_steps": [
+    "Lowercased all text",
+    "Removed emojis and non-ASCII characters",
+    "Expanded common contractions (e.g., can't -> cannot)",
+    "Removed punctuation and special characters",
+    "Normalized whitespace",
+    "Removed stop words using a curated English stop-word list",
+    "Applied rule-based lemmatization (e.g., stories->story, breathing->breath)",
+    "Dropped reviews with fewer than 3 tokens after cleaning",
+    "Dropped duplicate cleaned texts"
+  ],
+  "author": "Mihirkumar Patel",
+  "student_id": "219695808",
+  "note": "The Headspace Google Play Store page contains significantly more than 200 reviews. Due to API rate limits and time constraints, 200 reviews were extracted as a representative sample covering the full date range. The sample includes proportional coverage of all star ratings (1-5) and spans a 24-month window."
+}

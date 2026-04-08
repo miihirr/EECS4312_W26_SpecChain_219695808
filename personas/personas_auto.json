@@ -1,0 +1,184 @@
+{
+  "personas": [
+    {
+      "id": "PA1",
+      "name": "The Nightly Sleepcast Dependent",
+      "description": "An insomnia-affected user who relies on Sleepcasts as their primary sleep intervention each night. They require consistent, varied, and uninterrupted audio content designed to facilitate sleep onset.",
+      "derived_from_group": "A1",
+      "goals": [
+        "Achieve consistent sleep onset using Sleepcast audio",
+        "Access varied sleep content to prevent audio habituation",
+        "Sleep with audio running without device lock interrupting playback"
+      ],
+      "pain_points": [
+        "Sleep sounds cut out after a period even when the timer is set to continue",
+        "Sleepcast library variety is insufficient for nightly long-term users",
+        "Offline sleep content requires an internet connection to play",
+        "Sleep audio stops when the phone receives a notification"
+      ],
+      "context": [
+        "Opens the app at bedtime every night as part of a sleep routine",
+        "Requires audio to continue playing through phone lock screen without interruption",
+        "May wake during the night and need to restart audio without full app navigation"
+      ],
+      "constraints": [
+        "Audio playback shall not be interrupted by device lock screen activation",
+        "Offline-downloaded sleep content shall function without network access",
+        "Sleep timer shall stop audio at the user-configured time accurately"
+      ],
+      "evidence_reviews": [
+        "rev_004",
+        "rev_007",
+        "rev_009",
+        "rev_013",
+        "rev_015",
+        "rev_017",
+        "rev_030"
+      ]
+    },
+    {
+      "id": "PA2",
+      "name": "The Streak-Motivated Progress Tracker",
+      "description": "A meditator who uses session streaks, course progress tracking, and minute counters as motivation to maintain a daily practice. They are frustrated by streak loss due to system errors and by recommendation algorithms that ignore their actual experience level.",
+      "derived_from_group": "A2",
+      "goals": [
+        "Maintain a continuous meditation streak to reinforce habit formation",
+        "Receive course recommendations matched to their current practice level",
+        "Track session time and progress across the full course library"
+      ],
+      "pain_points": [
+        "Streaks reset due to server outages beyond the user control",
+        "Algorithm recommends beginner courses to users who have completed advanced content",
+        "Course progress percentages disappear causing loss of position tracking",
+        "Cannot access shorter session variants within a course when time is limited"
+      ],
+      "context": [
+        "Checks the streak counter and session history every morning",
+        "Uses course completion as a measure of personal growth and achievement",
+        "Compares current week session count to previous weeks for accountability"
+      ],
+      "constraints": [
+        "Streak counters shall not be reset by server-side or network failures",
+        "Content recommendations shall filter out courses already completed by the user",
+        "Session progress shall be cloud-synced and persist across devices"
+      ],
+      "evidence_reviews": [
+        "rev_052",
+        "rev_055",
+        "rev_058",
+        "rev_063",
+        "rev_067",
+        "rev_072",
+        "rev_075"
+      ]
+    },
+    {
+      "id": "PA3",
+      "name": "The Employer-Sponsored Wellness User",
+      "description": "A professional whose Headspace subscription is paid by their employer as part of a corporate wellness programme. They use the app during the workday for short meditations and focus sessions and rely on the Headspace for Work team features.",
+      "derived_from_group": "A3",
+      "goals": [
+        "Access short meditation sessions during the workday without logging out of employer account",
+        "Use Focus music to improve concentration during deep work sessions",
+        "Engage with Headspace for Work group session features for team use"
+      ],
+      "pain_points": [
+        "Cross-platform subscription sync fails between employer web portal and Android app",
+        "Annual subscription pricing is not transparently surfaced during initial signup",
+        "Content that is covered under the employer plan is not clearly indicated",
+        "Refund for accidental purchase requires navigating both Headspace and Google Play policies"
+      ],
+      "context": [
+        "Uses the app on a work-provided mobile device with MDM restrictions",
+        "Accesses Headspace during commute, lunch breaks, and pre-meeting preparation",
+        "May be part of a large team plan where seat access is managed by an administrator"
+      ],
+      "constraints": [
+        "Subscription access shall sync immediately across all platforms upon activation",
+        "The app shall function on devices with enterprise MDM policies applied",
+        "Employer plan content entitlements shall be clearly differentiated from personal plan content"
+      ],
+      "evidence_reviews": [
+        "rev_082",
+        "rev_086",
+        "rev_091",
+        "rev_092",
+        "rev_094",
+        "rev_104",
+        "rev_112"
+      ]
+    },
+    {
+      "id": "PA4",
+      "name": "The Bug-Blocked Android Commuter",
+      "description": "A commuting professional who attempts to use Headspace on their Android device during transit but is consistently blocked by background audio failures, notification interference, and offline download bugs.",
+      "derived_from_group": "A4",
+      "goals": [
+        "Listen to guided sessions during commutes without needing internet connectivity",
+        "Switch between apps during sessions without audio stopping",
+        "Receive push notifications at the scheduled time to prompt morning meditation"
+      ],
+      "pain_points": [
+        "Notification timing is unreliable with reminders arriving hours late",
+        "Volume controls inside the app are separate from system volume causing confusion",
+        "The app has no landscape tablet mode making it unusable on the user primary device",
+        "Bluetooth speaker connections drop mid-session requiring manual reconnection"
+      ],
+      "context": [
+        "Uses a Samsung or Pixel Android device running a recent OS version",
+        "Commutes daily via public transport and wants offline meditation during the journey",
+        "Uses Bluetooth headphones or a Bluetooth speaker for audio"
+      ],
+      "constraints": [
+        "The app shall maintain Bluetooth audio connection for the full session duration",
+        "Push notification delivery shall occur within 5 minutes of the user-configured time",
+        "A tablet landscape layout shall be available for screens larger than 7 inches"
+      ],
+      "evidence_reviews": [
+        "rev_125",
+        "rev_129",
+        "rev_139",
+        "rev_141",
+        "rev_144",
+        "rev_149",
+        "rev_152"
+      ]
+    },
+    {
+      "id": "PA5",
+      "name": "The Multilingual Diverse Content Seeker",
+      "description": "A non-English-native user who meditates in their preferred language and seeks cultural diversity in teachers and content. They find the English-language library far richer than their language option and want equal access to all content categories.",
+      "derived_from_group": "A5",
+      "goals": [
+        "Access the full Headspace content library in a non-English language",
+        "Benefit from teachers representing a variety of cultural and spiritual traditions",
+        "Discover intermediate-level content without needing to repeat beginner courses"
+      ],
+      "pain_points": [
+        "Non-English language libraries contain a fraction of the English content",
+        "Cultural perspectives in content are predominantly Western mindfulness-focused",
+        "No intermediate content layer exists between clearly beginner and advanced courses",
+        "Library filter options are not intuitive enough to surface relevant content quickly"
+      ],
+      "context": [
+        "Prefers to meditate in Spanish, French, or another supported non-English language",
+        "Has cultural expectations around meditation that differ from Western norms",
+        "Has completed all beginner courses and wants to progress without repeating them"
+      ],
+      "constraints": [
+        "All content categories shall be available in each supported language",
+        "The content library shall include teachers from South Asian and East Asian traditions",
+        "Intermediate-level content shall be filterable independently from beginner and advanced tiers"
+      ],
+      "evidence_reviews": [
+        "rev_164",
+        "rev_167",
+        "rev_169",
+        "rev_170",
+        "rev_172",
+        "rev_175",
+        "rev_178"
+      ]
+    }
+  ]
+}

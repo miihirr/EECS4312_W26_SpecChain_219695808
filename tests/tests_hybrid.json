@@ -1,16 +1,291 @@
 {
   "tests": [
     {
-      "test_id": "T_hybrid_1",
+      "test_id": "T_hybrid_1a",
       "requirement_id": "FR_hybrid_1",
-      "scenario": "Save a workout entry without crashing",
+      "scenario": "Sleepcast audio persists through screen lock",
       "steps": [
-        "Open the workout logging feature",
-        "Enter workout information",
-        "Submit the workout"
+        "Start a Sleepcast on Android and lock device within 10 seconds",
+        "Wait 5 minutes without unlock",
+        "Listen for audio after unlocking"
       ],
-      "expected_result": "The workout is saved successfully and the application does not crash.",
-      "notes": "Revised the expected result to match the updated hybrid requirement."
+      "expected_result": "Audio has been playing continuously during the device lock period and is still audible on unlock."
+    },
+    {
+      "test_id": "T_hybrid_1b",
+      "requirement_id": "FR_hybrid_1",
+      "scenario": "Foreground service prevents background audio kill",
+      "steps": [
+        "Start a Sleepcast",
+        "Open task manager and attempt to swipe away the Headspace app",
+        "Return to Headspace"
+      ],
+      "expected_result": "Audio continues playing even after the task manager attempt to close the app; a foreground service icon should be visible in the status bar."
+    },
+    {
+      "test_id": "T_hybrid_2a",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Ambient audio continues after Sleepcast narration ends",
+      "steps": [
+        "Start a Sleepcast with no sleep timer set",
+        "Allow the narration to complete",
+        "Listen for the next 5 minutes"
+      ],
+      "expected_result": "Ambient background audio continues to loop or play continuously after the narration portion of the Sleepcast has ended; no silence gap of more than 2 seconds."
+    },
+    {
+      "test_id": "T_hybrid_2b",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Audio does not click or restart when looping",
+      "steps": [
+        "Let a Sleepcast ambient section loop at least once",
+        "Listen carefully at the loop point"
+      ],
+      "expected_result": "The loop transition is seamless with no audible click, gap, or volume spike at the loop boundary."
+    },
+    {
+      "test_id": "T_hybrid_3a",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "Sleep timer stops within tolerance of configured time",
+      "steps": [
+        "Configure sleep timer to 30 minutes",
+        "Record the exact time audio starts",
+        "Monitor for exact stop time"
+      ],
+      "expected_result": "Audio stops between 30 minutes and 30 minutes 30 seconds after starting, and does not stop before 29 minutes 30 seconds."
+    },
+    {
+      "test_id": "T_hybrid_3b",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "Sleep timer fade-out audible before silence",
+      "steps": [
+        "Set sleep timer to 10 minutes",
+        "Listen at the 10-minute mark"
+      ],
+      "expected_result": "A 30-second gradual volume fade is audible before audio reaches complete silence; no abrupt cutoff."
+    },
+    {
+      "test_id": "T_hybrid_4a",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Post-beginner home screen shows Continue Your Journey",
+      "steps": [
+        "Complete the 10-day Basics course",
+        "Open the home screen and look for progression guidance"
+      ],
+      "expected_result": "A Continue your journey or similar section appears on the home screen containing at least 3 intermediate-level courses."
+    },
+    {
+      "test_id": "T_hybrid_4b",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Progression courses are tagged as intermediate",
+      "steps": [
+        "Complete the Basics course and observe the suggested next courses",
+        "Check the label or tag on each suggested course"
+      ],
+      "expected_result": "Each suggested next course in the post-completion section carries an intermediate label or equivalent difficulty indicator."
+    },
+    {
+      "test_id": "T_hybrid_5a",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Every session has an About section with technique description",
+      "steps": [
+        "Open 5 different meditation sessions across different courses",
+        "Locate the About or Why this works section on each session detail page"
+      ],
+      "expected_result": "All 5 sessions have a visible About section containing a 2-4 sentence description of the meditation technique and its evidence basis."
+    },
+    {
+      "test_id": "T_hybrid_5b",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "About section visible before session begins",
+      "steps": [
+        "Open a session detail page and read the About section without starting the session"
+      ],
+      "expected_result": "The About section is visible on the session detail screen prior to the user tapping Play, requiring no additional navigation."
+    },
+    {
+      "test_id": "T_hybrid_6a",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "In-app notification sent within 24 hours of guest teacher pack launch",
+      "steps": [
+        "Monitor the Headspace app on the day a new guest teacher pack is published",
+        "Check the notification inbox within 24 hours of the announced launch"
+      ],
+      "expected_result": "An in-app notification appears announcing the new guest teacher pack within 24 hours of its publication date."
+    },
+    {
+      "test_id": "T_hybrid_6b",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "New guest pack appears in home screen New section",
+      "steps": [
+        "Open Headspace on the day a guest teacher pack is released",
+        "Check the home screen for a New from Headspace or similar section"
+      ],
+      "expected_result": "The new guest teacher pack is visible in a New from Headspace section on the home screen on the day of release."
+    },
+    {
+      "test_id": "T_hybrid_7a",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Free trial lasts at least 14 days before billing",
+      "steps": [
+        "Register a new account and start the free trial",
+        "Note the trial start date",
+        "Verify that no charge is made within the first 14 days"
+      ],
+      "expected_result": "No payment is charged to the user's card within the first 14 days of the trial start date."
+    },
+    {
+      "test_id": "T_hybrid_7b",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Sleep, Meditation, and Focus categories accessible during trial",
+      "steps": [
+        "During the free trial period attempt to access content in Sleep, Meditation, and Focus categories"
+      ],
+      "expected_result": "At least one session in each of the three categories plays without a paywall or subscription prompt appearing."
+    },
+    {
+      "test_id": "T_hybrid_8a",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Renewal notification received 7 days before billing",
+      "steps": [
+        "Identify the upcoming subscription renewal date",
+        "Check push notifications exactly 7 days before that date"
+      ],
+      "expected_result": "A push notification is present containing the renewal date, the charge amount, and a deep-link to the subscription management screen."
+    },
+    {
+      "test_id": "T_hybrid_8b",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Deep-link in notification opens subscription management",
+      "steps": [
+        "Tap the renewal reminder notification",
+        "Observe where the app navigates"
+      ],
+      "expected_result": "Tapping the notification opens the Headspace subscription management screen directly without any intermediate navigation step."
+    },
+    {
+      "test_id": "T_hybrid_9a",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Session history fully restored on new device within 3 minutes",
+      "steps": [
+        "Record total session count and streak on original device",
+        "Factory reset original device or use a different device",
+        "Sign in to Headspace and wait 3 minutes"
+      ],
+      "expected_result": "The new device shows the exact same session count and streak value as the original device, restored within 3 minutes of sign-in."
+    },
+    {
+      "test_id": "T_hybrid_9b",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Course progress restored on new device",
+      "steps": [
+        "Complete 5 of 10 sessions in a course on the original device",
+        "Sign in on a new device",
+        "Navigate to the same course"
+      ],
+      "expected_result": "Course shows 5 of 10 sessions completed, matching the state on the original device."
+    },
+    {
+      "test_id": "T_hybrid_10a",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "Streak restoration request accepted in-app",
+      "steps": [
+        "Navigate to Help or Support in app settings",
+        "Submit a streak restoration request with the server incident date",
+        "Wait for a response"
+      ],
+      "expected_result": "A confirmation message is received acknowledging the request, and a response or resolution is provided within 5 business days."
+    },
+    {
+      "test_id": "T_hybrid_10b",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "Streak value correct after support restoration",
+      "steps": [
+        "Complete the streak restoration request process",
+        "Verify the streak counter after support confirms resolution"
+      ],
+      "expected_result": "Streak counter displays the value from before the server incident that caused the incorrect decrement."
+    },
+    {
+      "test_id": "T_hybrid_11a",
+      "requirement_id": "FR_hybrid_11",
+      "scenario": "Stressed mood check-in promotes stress content to top 2",
+      "steps": [
+        "Complete the mood check-in selecting stressed or anxious",
+        "Observe the top 2 items in the daily recommendation section"
+      ],
+      "expected_result": "Both of the top 2 recommended items are tagged as relevant for stress or anxiety."
+    },
+    {
+      "test_id": "T_hybrid_11b",
+      "requirement_id": "FR_hybrid_11",
+      "scenario": "Tired mood produces different top recommendations than energised mood",
+      "steps": [
+        "Report tired in one session mood check-in and note the top recommendation",
+        "In a subsequent session report energised and note the top recommendation"
+      ],
+      "expected_result": "The top recommended item differs between the tired session and the energised session, demonstrating mood-driven personalisation."
+    },
+    {
+      "test_id": "T_hybrid_12a",
+      "requirement_id": "FR_hybrid_12",
+      "scenario": "Grief category contains at least 15 sessions",
+      "steps": [
+        "Navigate to the Grief or Loss content category",
+        "Count all distinct sessions listed"
+      ],
+      "expected_result": "At least 15 sessions with unique titles are present in the Grief category."
+    },
+    {
+      "test_id": "T_hybrid_12b",
+      "requirement_id": "FR_hybrid_12",
+      "scenario": "ADHD Focus category contains at least 15 sessions",
+      "steps": [
+        "Navigate to the ADHD Focus or Focus content category",
+        "Count all listed sessions"
+      ],
+      "expected_result": "At least 15 distinct sessions are available in the ADHD Focus category."
+    },
+    {
+      "test_id": "T_hybrid_13a",
+      "requirement_id": "FR_hybrid_13",
+      "scenario": "Content request submission acknowledged immediately",
+      "steps": [
+        "Navigate to Settings > Request Content (or equivalent)",
+        "Submit a topic suggestion such as Grief for Children"
+      ],
+      "expected_result": "A confirmation screen appears immediately acknowledging the submission and stating a review timeline of within 2 weeks."
+    },
+    {
+      "test_id": "T_hybrid_13b",
+      "requirement_id": "FR_hybrid_13",
+      "scenario": "Content request form is reachable from settings",
+      "steps": [
+        "Open Headspace and navigate to Settings",
+        "Search for a Request Content, Suggest a Topic, or Feedback option"
+      ],
+      "expected_result": "A content request or suggestion option is visible in the Settings menu and opens a submission form."
+    },
+    {
+      "test_id": "T_hybrid_14a",
+      "requirement_id": "FR_hybrid_14",
+      "scenario": "Background audio plays for 30 minutes while using another app",
+      "steps": [
+        "Start a 30-minute guided meditation in Headspace",
+        "Switch to a browser and browse normally for 30 minutes",
+        "Return to Headspace"
+      ],
+      "expected_result": "Headspace audio has been playing for the full 30 minutes; playback position is at or near the end of the session."
+    },
+    {
+      "test_id": "T_hybrid_14b",
+      "requirement_id": "FR_hybrid_14",
+      "scenario": "Background service visible in Android status bar while playing",
+      "steps": [
+        "Start a Headspace audio session on Android",
+        "Background the app by pressing Home"
+      ],
+      "expected_result": "A foreground service notification for Headspace is visible in the status bar while audio is playing in the background."
     }
   ]
 }

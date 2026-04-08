@@ -1,22 +1,184 @@
-{  "personas": [
+{
+  "personas": [
     {
       "id": "P1",
-      "name": "Frequent Activity Tracker",
-      "description": "A user who relies on the app to log workouts frequently and expects stable performance.",
+      "name": "The Insomniac Sleepcast Listener",
+      "description": "An adult who struggles with chronic insomnia and relies heavily on Headspace Sleepcasts and ambient sleep sounds to fall asleep. They use the app every night as a primary sleep aid and are highly sensitive to audio interruptions or content repetition.",
       "derived_from_group": "G1",
       "goals": [
-        "Track workouts consistently",
-        "Log activity quickly"      ],
+        "Fall asleep consistently within 30 minutes using Sleepcast audio",
+        "Access a varied library of Sleepcasts to prevent habituation",
+        "Keep audio playing all night without interruption"
+      ],
       "pain_points": [
-        "App crashes during logging",
-        "Workout data sometimes disappears"      ],
+        "Sleep sounds stop when the phone screen locks or a notification arrives",
+        "Sleepcast library feels repetitive after several months of nightly use",
+        "Sleep timer is unreliable and stops audio earlier than the configured duration",
+        "Some Sleepcasts feel too short and silence after them wakes the user"
+      ],
       "context": [
-        "Logging activities immediately after workouts",
-        "Using the app during outdoor exercise"      ],
+        "Uses the app every night as part of a strict bedtime routine",
+        "Often listens in complete darkness with phone face-down or plugged in",
+        "May switch to another Sleepcast mid-night if the first does not work"
+      ],
       "constraints": [
-        "Logging must be reliable",
-        "Data should not be lost"       ],
+        "The system must continue playing audio when the phone screen locks",
+        "The sleep timer must stop audio at the configured time, not earlier",
+        "New Sleepcast content must be added at least monthly to prevent repetition"
+      ],
       "evidence_reviews": [
-        "rev_12",
-        "rev_45"      ]
-    }  ] }
+        "rev_001",
+        "rev_004",
+        "rev_007",
+        "rev_015",
+        "rev_022",
+        "rev_030",
+        "rev_035"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "The Structured Course Meditator",
+      "description": "A motivated adult learner who works through Headspace guided courses systematically to build a consistent meditation practice. They rely on Andy Puddicombe structured course progression and appreciate evidence-based techniques that are clearly explained.",
+      "derived_from_group": "G2",
+      "goals": [
+        "Complete a full guided meditation course within 30 days",
+        "Understand the technique behind each meditation session",
+        "Track cumulative session minutes and maintain a daily streak"
+      ],
+      "pain_points": [
+        "Streak resets due to server outages not caused by the user",
+        "Recommendation algorithm pushes beginner content to experienced practitioners",
+        "Cannot select a shorter version of a course session when time is limited",
+        "Guest teacher variety is insufficient for long-term subscribers"
+      ],
+      "context": [
+        "Meditates at a fixed time each morning before starting work",
+        "Uses the session history and streak counter as accountability tools",
+        "Explores themed courses around specific life challenges such as stress or grief"
+      ],
+      "constraints": [
+        "The system shall not reset a user streak due to server-side failures",
+        "Course recommendation logic must account for the user current practice level",
+        "Session length variants must be available for each course session"
+      ],
+      "evidence_reviews": [
+        "rev_041",
+        "rev_042",
+        "rev_043",
+        "rev_055",
+        "rev_063",
+        "rev_072",
+        "rev_075"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "The Cost-Conscious Subscriber",
+      "description": "A price-sensitive user who carefully evaluates the subscription cost relative to actual usage. They compare monthly versus annual pricing and are frustrated by opaque billing practices, unwanted auto-renewals, and difficult cancellation flows.",
+      "derived_from_group": "G3",
+      "goals": [
+        "Understand the full cost of the subscription before committing",
+        "Cancel or pause a subscription without hidden obstacles",
+        "Access enough free content to evaluate the product before subscribing"
+      ],
+      "pain_points": [
+        "Auto-renewal triggers without an advance reminder email",
+        "Cancellation flow is deliberately non-obvious within the app",
+        "Three-day trial is insufficient to evaluate the full content library",
+        "Billing disputes require contacting both Headspace and Google Play creating a loop"
+      ],
+      "context": [
+        "Evaluates subscription apps critically before committing to recurring payments",
+        "May subscribe for one month then downgrade to assess ongoing value",
+        "Looks for promotional pricing and discount codes before paying full price"
+      ],
+      "constraints": [
+        "The system shall send an advance notification before auto-renewing a subscription",
+        "A clear subscription cancellation option must be accessible within three taps from account settings",
+        "The free trial must provide sufficient breadth of content for meaningful evaluation"
+      ],
+      "evidence_reviews": [
+        "rev_083",
+        "rev_085",
+        "rev_089",
+        "rev_090",
+        "rev_100",
+        "rev_103",
+        "rev_115"
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "The Frustrated Android User",
+      "description": "An Android smartphone user who experiences consistent technical failures including crashes, background audio interruptions, and broken offline functionality. They want to use Headspace regularly but are blocked by platform-specific bugs that have remained unresolved across multiple app versions.",
+      "derived_from_group": "G4",
+      "goals": [
+        "Play meditation audio in the background while using other apps",
+        "Download sessions for offline use during commutes or travel",
+        "Maintain account data and streak history across device upgrades"
+      ],
+      "pain_points": [
+        "Background audio stops immediately when switching to another app on Android 14",
+        "Offline downloads fail silently and content is unavailable without internet",
+        "App crashes consistently on Samsung Galaxy and Pixel devices",
+        "Account data and streaks are not preserved when changing devices"
+      ],
+      "context": [
+        "Uses an Android device running a recent OS version",
+        "Wants to listen to guided sessions during commutes without internet connectivity",
+        "Has submitted support tickets that have not resulted in fixes"
+      ],
+      "constraints": [
+        "The system shall maintain audio playback when the app is moved to the background on Android",
+        "Downloaded content must be playable in airplane mode without any network request",
+        "User account data including streaks must survive a device change via cloud sync"
+      ],
+      "evidence_reviews": [
+        "rev_121",
+        "rev_122",
+        "rev_124",
+        "rev_126",
+        "rev_127",
+        "rev_130",
+        "rev_148"
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "The Long-Term Personalization Seeker",
+      "description": "A multi-year Headspace subscriber who wants the app to grow with their practice. They find that early personalization from an onboarding quiz has become stale and that content recommendations do not reflect their current experience level, interests, or mood inputs.",
+      "derived_from_group": "G5",
+      "goals": [
+        "Receive daily recommendations that reflect current mood and experience level",
+        "Discover new and varied content even after years of using the app",
+        "Engage with content tailored to specific life contexts such as parenting or grief"
+      ],
+      "pain_points": [
+        "Recommendations remain static and do not evolve with practice maturity",
+        "Mood check-in data does not appear to influence content that is surfaced",
+        "Content library feels stagnant with limited additions over the past 18 months",
+        "No mechanism to request content topics or flag recommendations as irrelevant"
+      ],
+      "context": [
+        "Has been a premium subscriber for two or more years",
+        "Has completed the majority of available courses and wants deeper or newer content",
+        "Uses the app for specific life events such as parenting stress or grief management"
+      ],
+      "constraints": [
+        "The recommendation engine shall update its model based on mood check-ins and session ratings",
+        "Content tagged as completed by a user shall not be recommended as the primary daily suggestion",
+        "New courses must be released at a cadence visible to subscribers"
+      ],
+      "evidence_reviews": [
+        "rev_161",
+        "rev_162",
+        "rev_167",
+        "rev_168",
+        "rev_173",
+        "rev_187",
+        "rev_194"
+      ]
+    }
+  ]
+}

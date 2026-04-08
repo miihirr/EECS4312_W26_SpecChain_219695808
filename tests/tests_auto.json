@@ -1,15 +1,250 @@
 {
   "tests": [
     {
-      "test_id": "T_auto_1",
+      "test_id": "T_auto_1a",
       "requirement_id": "FR_auto_1",
-      "scenario": "Logging a workout without crashing",
+      "scenario": "Sleepcast continues after screen lock on Android",
       "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
+        "Open Headspace on Android and navigate to Sleep > Sleepcasts",
+        "Start any Sleepcast",
+        "Lock the screen within 5 seconds of starting"
       ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+      "expected_result": "Audio continues playing after the screen locks with no pause or volume change."
+    },
+    {
+      "test_id": "T_auto_1b",
+      "requirement_id": "FR_auto_1",
+      "scenario": "Sleep sound plays through notification interrupt",
+      "steps": [
+        "Play a sleep sound track from the Sounds library",
+        "Send a notification to the device from another app"
+      ],
+      "expected_result": "Sleep sound audio continues at the same volume when the notification banner appears."
+    },
+    {
+      "test_id": "T_auto_2a",
+      "requirement_id": "FR_auto_2",
+      "scenario": "Sleep timer stops audio at configured time with fade",
+      "steps": [
+        "Set sleep timer to 3 minutes and start a Sleepcast",
+        "Monitor audio for 3.5 minutes"
+      ],
+      "expected_result": "Audio begins fading at the 3-minute mark and is fully silent by 3 minutes 30 seconds."
+    },
+    {
+      "test_id": "T_auto_2b",
+      "requirement_id": "FR_auto_2",
+      "scenario": "Sleep timer does not stop early",
+      "steps": [
+        "Configure sleep timer to 90 minutes",
+        "Verify audio is still playing at 60 minutes without user interaction"
+      ],
+      "expected_result": "Audio is still playing 60 minutes into the session and has not ended before the configured 90-minute timer."
+    },
+    {
+      "test_id": "T_auto_3a",
+      "requirement_id": "FR_auto_3",
+      "scenario": "Downloaded Sleepcast plays in airplane mode",
+      "steps": [
+        "Download a Sleepcast while on Wi-Fi",
+        "Enable airplane mode",
+        "Open and play the downloaded Sleepcast"
+      ],
+      "expected_result": "Playback begins within 3 seconds and continues without interruption or network error."
+    },
+    {
+      "test_id": "T_auto_3b",
+      "requirement_id": "FR_auto_3",
+      "scenario": "Undownloaded content shows clear error offline",
+      "steps": [
+        "Enable airplane mode",
+        "Attempt to play a Sleepcast that has not been downloaded"
+      ],
+      "expected_result": "App displays a clear message stating the session is not downloaded and cannot play offline, rather than a generic crash or blank screen."
+    },
+    {
+      "test_id": "T_auto_4a",
+      "requirement_id": "FR_auto_4",
+      "scenario": "Streak preserved when session completed offline",
+      "steps": [
+        "Disable network access on the device",
+        "Complete a meditation session while offline",
+        "Restore network access and reopen the app"
+      ],
+      "expected_result": "The session syncs after connectivity is restored and the streak counter is not decremented."
+    },
+    {
+      "test_id": "T_auto_4b",
+      "requirement_id": "FR_auto_4",
+      "scenario": "Local session count matches server after sync",
+      "steps": [
+        "Complete 3 sessions while offline",
+        "Restore connectivity",
+        "Check session history count on the server via account page"
+      ],
+      "expected_result": "All 3 offline sessions appear in session history and the total count matches the expected value."
+    },
+    {
+      "test_id": "T_auto_5a",
+      "requirement_id": "FR_auto_5",
+      "scenario": "Completed beginner course removed from top 5 recommendations",
+      "steps": [
+        "Complete all 10 sessions of the Basics beginner course",
+        "Open the home feed the next day"
+      ],
+      "expected_result": "The completed Basics course does not appear in the top 5 recommended items on the home screen."
+    },
+    {
+      "test_id": "T_auto_5b",
+      "requirement_id": "FR_auto_5",
+      "scenario": "Intermediate course appears post-beginner completion",
+      "steps": [
+        "Mark a beginner course as complete",
+        "Check the recommendation feed for intermediate-tagged content"
+      ],
+      "expected_result": "At least 2 items in the recommendation feed are tagged as intermediate or advanced level."
+    },
+    {
+      "test_id": "T_auto_6a",
+      "requirement_id": "FR_auto_6",
+      "scenario": "Subscription activates immediately on Android after iOS purchase",
+      "steps": [
+        "Purchase a subscription on an iOS device",
+        "Within 60 seconds open the app on an Android device",
+        "Attempt to access premium content"
+      ],
+      "expected_result": "Premium content is accessible on Android within 60 seconds of the iOS purchase without sign-out or manual refresh."
+    },
+    {
+      "test_id": "T_auto_6b",
+      "requirement_id": "FR_auto_6",
+      "scenario": "Web purchase activates on Android within 60 seconds",
+      "steps": [
+        "Purchase subscription on the Headspace website",
+        "Within 60 seconds open the Android app"
+      ],
+      "expected_result": "Premium content is available immediately without a sign-in prompt."
+    },
+    {
+      "test_id": "T_auto_7a",
+      "requirement_id": "FR_auto_7",
+      "scenario": "App authenticates on MDM-enrolled Android device",
+      "steps": [
+        "Install Headspace on an Android device enrolled in an enterprise MDM profile",
+        "Open the app and attempt to sign in with a personal Headspace account"
+      ],
+      "expected_result": "Sign-in completes successfully and the home screen loads without MDM conflict errors."
+    },
+    {
+      "test_id": "T_auto_7b",
+      "requirement_id": "FR_auto_7",
+      "scenario": "Content plays on MDM-enrolled device",
+      "steps": [
+        "Authenticate on an MDM-enrolled Android device",
+        "Navigate to any meditation session and press play"
+      ],
+      "expected_result": "Audio plays without MDM-related permission errors or audio output failures."
+    },
+    {
+      "test_id": "T_auto_8a",
+      "requirement_id": "FR_auto_8",
+      "scenario": "Push notification delivered within 5 minutes of configured time",
+      "steps": [
+        "Set a daily reminder to 08:00",
+        "Wait until 08:05 on the following day and check the notification drawer"
+      ],
+      "expected_result": "A Headspace reminder notification is present in the notification drawer by 08:05."
+    },
+    {
+      "test_id": "T_auto_8b",
+      "requirement_id": "FR_auto_8",
+      "scenario": "Notification delivered on day with poor connectivity",
+      "steps": [
+        "Configure daily reminder for a specific time",
+        "At that time disable and re-enable Wi-Fi to simulate poor connectivity",
+        "Check notification drawer within 5 minutes of reminder time"
+      ],
+      "expected_result": "Notification is still delivered within the 5-minute window despite intermittent connectivity."
+    },
+    {
+      "test_id": "T_auto_9a",
+      "requirement_id": "FR_auto_9",
+      "scenario": "Bluetooth reconnects automatically after brief dropout",
+      "steps": [
+        "Connect Bluetooth headphones and start a meditation session",
+        "Briefly move headphones out of range for 5 seconds then back into range"
+      ],
+      "expected_result": "Audio resumes automatically from the same position within 3 seconds of Bluetooth re-connection, without user action."
+    },
+    {
+      "test_id": "T_auto_9b",
+      "requirement_id": "FR_auto_9",
+      "scenario": "Bluetooth audio plays for full session without manual reconnection",
+      "steps": [
+        "Connect paired Bluetooth speaker and start a 30-minute guided meditation",
+        "Monitor session without touching the device"
+      ],
+      "expected_result": "Audio plays continuously on the Bluetooth speaker for the full 30 minutes without requiring manual reconnection."
+    },
+    {
+      "test_id": "T_auto_10a",
+      "requirement_id": "FR_auto_10",
+      "scenario": "Landscape layout renders on 7-inch tablet",
+      "steps": [
+        "Open Headspace on an Android tablet with screen diagonal of at least 7 inches",
+        "Rotate to landscape orientation"
+      ],
+      "expected_result": "UI renders in a two-column layout with no cropped elements, portrait-locked screens, or overflow."
+    },
+    {
+      "test_id": "T_auto_10b",
+      "requirement_id": "FR_auto_10",
+      "scenario": "All primary screens support landscape on tablet",
+      "steps": [
+        "On a tablet in landscape mode navigate through Home, Sleep, Meditate, and Profile screens"
+      ],
+      "expected_result": "Each screen renders in a proper landscape layout on all 4 primary sections without falling back to portrait."
+    },
+    {
+      "test_id": "T_auto_11a",
+      "requirement_id": "FR_auto_11",
+      "scenario": "Sleep category shows 10+ sessions in non-English language",
+      "steps": [
+        "Change language to Spanish in app settings",
+        "Navigate to the Sleep content category"
+      ],
+      "expected_result": "At least 10 distinct sleep sessions are listed in Spanish in the Sleep category."
+    },
+    {
+      "test_id": "T_auto_11b",
+      "requirement_id": "FR_auto_11",
+      "scenario": "Meditation category shows 10+ sessions in French",
+      "steps": [
+        "Set language to French",
+        "Navigate to the Meditation category"
+      ],
+      "expected_result": "At least 10 distinct guided meditation sessions appear in French."
+    },
+    {
+      "test_id": "T_auto_12a",
+      "requirement_id": "FR_auto_12",
+      "scenario": "Intermediate filter shows only intermediate sessions",
+      "steps": [
+        "Complete at least one beginner course",
+        "Open the content filter and select Intermediate"
+      ],
+      "expected_result": "All sessions shown are tagged as intermediate; no beginner-tagged sessions appear in the filtered result."
+    },
+    {
+      "test_id": "T_auto_12b",
+      "requirement_id": "FR_auto_12",
+      "scenario": "Intermediate filter is accessible to beginner completers",
+      "steps": [
+        "Complete a beginner course",
+        "Navigate to the Browse or Explore section",
+        "Check available filter options"
+      ],
+      "expected_result": "An Intermediate filter option is visible and selectable in the filter panel."
     }
   ]
 }

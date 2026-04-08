@@ -1,31 +1,184 @@
 {
   "personas": [
     {
-      "id": "P_hybrid_1",
-      "name": "Frequent Fitness Logger",
-      "description": "A user who depends on the app for regular workout tracking and expects logging to work reliably during or immediately after exercise.",
+      "id": "PH1",
+      "name": "The Wind-Down Routine Builder",
+      "description": "A user who has actively worked to replace poor sleep hygiene with a structured nightly wind-down routine using Headspace tools. They use a combination of meditation exercises and Sleepcasts to create a reliable pre-sleep ritual and are sensitive to any disruption of the routine.",
       "derived_from_group": "H1",
       "goals": [
-        "Log workouts quickly",
-        "Track activities without interruption"
+        "Build and maintain a consistent nightly wind-down routine",
+        "Use Sleepcasts and body scan exercises to manage sleep-onset anxiety",
+        "Track sleep quality improvement over time using the 30-day sleep course"
       ],
       "pain_points": [
-        "The app crashes while saving workouts",
-        "Previously entered activity data may disappear"
+        "Sleepcast audio stops due to phone lock or incoming notifications",
+        "Insufficient new Sleepcast content causes the routine to feel repetitive",
+        "Sleep timer inconsistency disrupts carefully planned wind-down timing",
+        "Background audio failure requires leaving the wind-down state to fix the app"
       ],
       "context": [
-        "Using the app during exercise sessions",
-        "Using the app outdoors or while moving"
+        "Begins using the app 30 to 45 minutes before intended sleep time",
+        "Uses Do Not Disturb mode but Headspace audio still stops at unexpected times",
+        "May share the audio experience with a partner using the same account"
       ],
       "constraints": [
-        "Workout logging must complete without crashing",
-        "Saved workout data must persist"
+        "The system shall allow audio to continue playing in the background during phone lock",
+        "Sleep content shall loop or fade into ambient audio rather than ending in silence",
+        "Wind-down content must be accessible without account re-authentication mid-session"
       ],
       "evidence_reviews": [
-        "rev_12",
-        "rev_41"
+        "rev_005",
+        "rev_010",
+        "rev_016",
+        "rev_022",
+        "rev_027",
+        "rev_034",
+        "rev_040"
+      ]
+    },
+    {
+      "id": "PH2",
+      "name": "The Evidence-Seeking Wellness Convert",
+      "description": "A sceptical adult who was initially unconvinced by meditation but was persuaded to try Headspace through a recommendation. After completing a structured course they became convinced by measurable personal improvements and now recommend the app to others.",
+      "derived_from_group": "H2",
+      "goals": [
+        "Complete a full structured meditation course and observe a measurable benefit",
+        "Understand the psychological rationale behind each meditation technique",
+        "Progress from beginner courses to more specialized content as practice matures"
       ],
-      "notes": "Refined the persona description and removed an unsupported assumption about synchronization."
+      "pain_points": [
+        "Early recommendation assumes existing familiarity with meditation concepts",
+        "No clear pathway is surfaced for transitioning from beginner to intermediate practice",
+        "Guest teacher variety is insufficient to maintain engagement over the long term",
+        "The recommendation algorithm does not accelerate progression based on completion rate"
+      ],
+      "context": [
+        "Came to the app sceptically on a friend or professional recommendation",
+        "May be using Headspace as a complement to therapy or coaching",
+        "Shares their experience with the app with friends and family to encourage adoption"
+      ],
+      "constraints": [
+        "Course completion data shall trigger updated content recommendations automatically",
+        "The onboarding experience shall offer an accelerated pathway for self-described experienced meditators",
+        "Guest teacher packs shall be released on a predictable schedule and announced in-app"
+      ],
+      "evidence_reviews": [
+        "rev_041",
+        "rev_043",
+        "rev_049",
+        "rev_053",
+        "rev_065",
+        "rev_071",
+        "rev_073"
+      ]
+    },
+    {
+      "id": "PH3",
+      "name": "The Value-Evaluating Subscriber",
+      "description": "A careful consumer who weighs the ongoing cost of a Headspace subscription against the breadth of content they actually use. They are frustrated by aggressive paywall placement, short trial periods, and difficult cancellation flows.",
+      "derived_from_group": "H3",
+      "goals": [
+        "Accurately evaluate the app value before committing to a subscription",
+        "Access a clear and honest pricing structure with no hidden billing surprises",
+        "Cancel or pause the subscription easily if personal use declines"
+      ],
+      "pain_points": [
+        "Three-day trial is too short to explore the full content library",
+        "Auto-renewal happens without a prior notification reminder",
+        "Cancellation flow requires knowledge of an external process and is not discoverable in-app",
+        "Cross-platform subscriptions do not transfer between iOS and Android"
+      ],
+      "context": [
+        "Evaluates the free trial critically before subscribing",
+        "May use the app inconsistently and weigh cost against usage frequency each renewal",
+        "Reads reviews and comparison articles before choosing between competing apps"
+      ],
+      "constraints": [
+        "A renewal reminder notification shall be sent at least 7 days before auto-renewal",
+        "A subscription management screen shall be accessible within 3 taps from the home screen",
+        "The free trial shall provide access to at least one session from each major content category"
+      ],
+      "evidence_reviews": [
+        "rev_081",
+        "rev_085",
+        "rev_090",
+        "rev_096",
+        "rev_103",
+        "rev_105",
+        "rev_111"
+      ]
+    },
+    {
+      "id": "PH4",
+      "name": "The Data-Loss-Averse Power User",
+      "description": "A power user who has invested significant time building a meditation history, streak record, and course progress within Headspace. They are disproportionately impacted by data loss from server outages, device changes, or app updates.",
+      "derived_from_group": "H4",
+      "goals": [
+        "Preserve meditation history and streak data across device changes and app updates",
+        "Reliably access downloaded content without an internet connection",
+        "Sign in consistently using their preferred authentication method"
+      ],
+      "pain_points": [
+        "Streaks reset after server outages with no restoration mechanism",
+        "Account data not transferred during phone upgrade despite account being linked",
+        "Google sign-in fails after app updates requiring workaround via older APK",
+        "Offline downloads fail silently leaving users with no content during travel"
+      ],
+      "context": [
+        "Has accumulated hundreds of meditation sessions logged in the app",
+        "Changes devices regularly and expects seamless data transfer",
+        "Travels frequently and depends on offline content access for consistent practice"
+      ],
+      "constraints": [
+        "All user account data including streaks and session history shall be stored in cloud sync",
+        "Streak data affected by a server-side incident shall be restorable by customer support",
+        "Authentication state shall persist across app updates without requiring re-login"
+      ],
+      "evidence_reviews": [
+        "rev_122",
+        "rev_124",
+        "rev_126",
+        "rev_130",
+        "rev_133",
+        "rev_147",
+        "rev_148"
+      ]
+    },
+    {
+      "id": "PH5",
+      "name": "The Life-Stage-Specific Content Searcher",
+      "description": "A user navigating a significant life transition such as new parenthood, grief, or chronic illness who seeks highly specific mindfulness content tailored to their current circumstances. They find the general library lacking depth in specialized areas.",
+      "derived_from_group": "H5",
+      "goals": [
+        "Find content specifically designed for their current life stage or challenge",
+        "Receive daily recommendations that reflect their mood and specific context",
+        "Build a personalized practice that grows in relevance over time"
+      ],
+      "pain_points": [
+        "Mood check-in does not appear to influence daily content recommendations",
+        "Specialized content categories such as grief or chronic pain are shallow compared to general meditation",
+        "No mechanism exists to request content topics or give feedback on recommendations",
+        "Personalization is determined at onboarding and does not update over time"
+      ],
+      "context": [
+        "Is experiencing a major life transition that changes their mindfulness needs significantly",
+        "Uses the app multiple times per week and has a clear sense of what they need",
+        "Has contacted support or used the feedback mechanism to request specific content"
+      ],
+      "constraints": [
+        "Mood and context check-in data shall directly influence the content surfaced within the same session",
+        "Specialized topic libraries shall contain a minimum of 10 sessions per topic",
+        "Users shall be able to submit content requests through an in-app feedback channel"
+      ],
+      "evidence_reviews": [
+        "rev_161",
+        "rev_163",
+        "rev_171",
+        "rev_179",
+        "rev_184",
+        "rev_187",
+        "rev_192"
+      ]
     }
   ]
 }

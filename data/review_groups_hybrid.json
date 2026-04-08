@@ -1,13 +1,134 @@
-{  "groups": [
+{
+  "groups": [
     {
       "group_id": "H1",
-      "theme": "Workout logging failures during activity tracking",
-      "review_ids": ["rev_12", "rev_33", "rev_41", "rev_92"],
-      "example_reviews": [
-        "The app crashes whenever I try to log a run.",
-        "Logging workouts causes the app to freeze."
+      "theme": "Sleepcast and sleep audio effectiveness",
+      "review_ids": [
+        "rev_002",
+        "rev_005",
+        "rev_010",
+        "rev_016",
+        "rev_018",
+        "rev_019",
+        "rev_022",
+        "rev_024",
+        "rev_027",
+        "rev_029",
+        "rev_031",
+        "rev_034",
+        "rev_037",
+        "rev_038",
+        "rev_040"
       ],
-      "notes": "Removed one unrelated review about login problems from the original automated group."
+      "example_reviews": [
+        "Sleep music selection is amazing but I wish there were more variety in the Sleepcasts.",
+        "The bedtime wind-down course helped me establish a consistent sleep schedule for the first time.",
+        "The Forest Rain Sleepcast is pure magic. Fall asleep in minutes every time."
+      ]
+    },
+    {
+      "group_id": "H2",
+      "theme": "Guided meditation quality and course progression",
+      "review_ids": [
+        "rev_041",
+        "rev_043",
+        "rev_046",
+        "rev_049",
+        "rev_053",
+        "rev_054",
+        "rev_056",
+        "rev_059",
+        "rev_061",
+        "rev_064",
+        "rev_065",
+        "rev_070",
+        "rev_071",
+        "rev_073",
+        "rev_079"
+      ],
+      "example_reviews": [
+        "Andy Puddicombe is a gifted teacher. His voice and pacing make even complex mindfulness concepts feel accessible.",
+        "The 30-day Stress course and my anxiety levels are measurably lower.",
+        "I am 67 years old and was hesitant about meditation apps. The simple interface and Andy patient voice made it approachable."
+      ]
+    },
+    {
+      "group_id": "H3",
+      "theme": "Subscription value, paywalls, and cancellation experience",
+      "review_ids": [
+        "rev_081",
+        "rev_082",
+        "rev_085",
+        "rev_086",
+        "rev_089",
+        "rev_090",
+        "rev_093",
+        "rev_096",
+        "rev_099",
+        "rev_103",
+        "rev_105",
+        "rev_109",
+        "rev_111",
+        "rev_115",
+        "rev_120"
+      ],
+      "example_reviews": [
+        "12.99 a month is too expensive for what is essentially an audio app.",
+        "Family plan covers 6 members at a reasonable price.",
+        "Three day free trial is not enough time to evaluate the full library."
+      ]
+    },
+    {
+      "group_id": "H4",
+      "theme": "Technical reliability and platform-specific bugs",
+      "review_ids": [
+        "rev_122",
+        "rev_124",
+        "rev_126",
+        "rev_127",
+        "rev_128",
+        "rev_130",
+        "rev_133",
+        "rev_136",
+        "rev_138",
+        "rev_146",
+        "rev_147",
+        "rev_148",
+        "rev_150",
+        "rev_154",
+        "rev_155"
+      ],
+      "example_reviews": [
+        "Background audio stops playing the moment I switch to another app on Android 14.",
+        "Google account sign-in is broken on the latest app version.",
+        "Headspace broke something in its last update that makes the app run at double speed on my device."
+      ]
+    },
+    {
+      "group_id": "H5",
+      "theme": "Personalization depth and content breadth",
+      "review_ids": [
+        "rev_161",
+        "rev_163",
+        "rev_166",
+        "rev_168",
+        "rev_171",
+        "rev_176",
+        "rev_179",
+        "rev_181",
+        "rev_184",
+        "rev_187",
+        "rev_190",
+        "rev_192",
+        "rev_194",
+        "rev_198",
+        "rev_200"
+      ],
+      "example_reviews": [
+        "The mood check-in at the start of each session is a great feature but the recommendations do not seem to actually respond to what I tell it.",
+        "Content for children is excellent. My 8 year old daughter uses the kids section independently.",
+        "The commuter meditation series designed to be used in noisy public spaces is genuinely clever design."
+      ]
     }
   ]
 }

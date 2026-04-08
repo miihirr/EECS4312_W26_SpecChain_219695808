@@ -2,11 +2,133 @@
   "groups": [
     {
       "group_id": "G1",
-      "theme": "App crashes during activity logging, THIS IS A AN EXAMPLE, PLEASE REMOVE ",
-      "review_ids": ["rev_12", "rev_33", "rev_45", "rev_89"],
+      "theme": "Sleep content quality and Sleepcast experience",
+      "review_ids": [
+        "rev_001",
+        "rev_002",
+        "rev_003",
+        "rev_005",
+        "rev_006",
+        "rev_008",
+        "rev_010",
+        "rev_012",
+        "rev_014",
+        "rev_016",
+        "rev_018",
+        "rev_022",
+        "rev_029",
+        "rev_031",
+        "rev_038"
+      ],
       "example_reviews": [
-        "The app crashes every time I log my run.",
-        "Logging workouts causes the app to freeze."
+        "The Sleepcasts are absolutely incredible. I fall asleep to The Garden every night and I am out within 10 minutes.",
+        "The Ocean Sleepcast is my absolute favourite. I can visualise the scene they describe and my brain just switches off.",
+        "I downloaded Headspace specifically for the Sleepcasts and they do not disappoint."
+      ]
+    },
+    {
+      "group_id": "G2",
+      "theme": "Guided meditation, courses, and Andy Puddicombe experience",
+      "review_ids": [
+        "rev_041",
+        "rev_042",
+        "rev_043",
+        "rev_044",
+        "rev_046",
+        "rev_048",
+        "rev_049",
+        "rev_051",
+        "rev_053",
+        "rev_054",
+        "rev_059",
+        "rev_061",
+        "rev_064",
+        "rev_065",
+        "rev_071"
+      ],
+      "example_reviews": [
+        "Andy Puddicombe is a gifted teacher. His voice and pacing in the guided meditations make even complex mindfulness concepts feel accessible.",
+        "The 10-day Basics course completely changed my understanding of meditation.",
+        "The SOS meditation is a lifesaver during panic attacks. Having a guided emergency meditation available in three taps has helped me manage my anxiety disorder."
+      ]
+    },
+    {
+      "group_id": "G3",
+      "theme": "Subscription cost, paywalls, and billing issues",
+      "review_ids": [
+        "rev_081",
+        "rev_083",
+        "rev_085",
+        "rev_087",
+        "rev_089",
+        "rev_090",
+        "rev_092",
+        "rev_095",
+        "rev_099",
+        "rev_100",
+        "rev_103",
+        "rev_107",
+        "rev_111",
+        "rev_115",
+        "rev_118"
+      ],
+      "example_reviews": [
+        "12.99 a month is too expensive for what is essentially an audio app.",
+        "The annual subscription at 69.99 works out to under 6 dollars a month which is reasonable for the quality and breadth of content.",
+        "Getting a refund is impossible. Their customer service told me to contact Google Play and Google Play told me to contact Headspace."
+      ]
+    },
+    {
+      "group_id": "G4",
+      "theme": "Technical bugs, crashes, and background audio failures",
+      "review_ids": [
+        "rev_121",
+        "rev_122",
+        "rev_123",
+        "rev_124",
+        "rev_126",
+        "rev_127",
+        "rev_128",
+        "rev_130",
+        "rev_131",
+        "rev_133",
+        "rev_136",
+        "rev_138",
+        "rev_147",
+        "rev_148",
+        "rev_155"
+      ],
+      "example_reviews": [
+        "The app crashes every time I try to download sessions for offline use on my Pixel 8.",
+        "Background audio stops playing the moment I switch to another app on Android 14. Complete deal breaker.",
+        "My meditation streak reset to zero after a server outage that was not my fault. I had a 92-day streak."
+      ]
+    },
+    {
+      "group_id": "G5",
+      "theme": "Content variety, personalization, and feature breadth",
+      "review_ids": [
+        "rev_161",
+        "rev_162",
+        "rev_163",
+        "rev_166",
+        "rev_168",
+        "rev_171",
+        "rev_176",
+        "rev_179",
+        "rev_181",
+        "rev_184",
+        "rev_187",
+        "rev_188",
+        "rev_192",
+        "rev_198",
+        "rev_199"
+      ],
+      "example_reviews": [
+        "The mood check-in at the start of each session is a great feature but the recommendations it generates do not seem to actually respond to what I tell it.",
+        "The outdoor walking meditation series is a rare combination of movement and mindfulness that no other app does as well.",
+        "Content for children is excellent. My 8 year old daughter uses the kids section independently."
       ]
     }
-  ]}
+  ]
+}

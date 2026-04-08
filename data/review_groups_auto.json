@@ -2,11 +2,132 @@
   "groups": [
     {
       "group_id": "A1",
-      "theme": "Workout logging issues",
-      "review_ids": ["rev_12", "rev_33", "rev_41", "rev_92"],
+      "theme": "Sleep content and Sleepcast audio quality",
+      "review_ids": [
+        "rev_001",
+        "rev_003",
+        "rev_004",
+        "rev_007",
+        "rev_009",
+        "rev_011",
+        "rev_013",
+        "rev_015",
+        "rev_017",
+        "rev_020",
+        "rev_023",
+        "rev_026",
+        "rev_030",
+        "rev_035",
+        "rev_040"
+      ],
       "example_reviews": [
-        "The app crashes whenever I try to log a run.",
-        "Logging workouts causes the app to freeze."
+        "The Sleepcasts are absolutely incredible. Nothing else has worked for my insomnia like this.",
+        "Sleep music selection is amazing but I wish there were more variety in the Sleepcasts.",
+        "The sleep sounds stop playing when my phone locks which completely defeats the purpose."
+      ]
+    },
+    {
+      "group_id": "A2",
+      "theme": "Meditation courses, streaks, and session tracking",
+      "review_ids": [
+        "rev_047",
+        "rev_050",
+        "rev_052",
+        "rev_055",
+        "rev_057",
+        "rev_058",
+        "rev_062",
+        "rev_063",
+        "rev_066",
+        "rev_067",
+        "rev_068",
+        "rev_072",
+        "rev_073",
+        "rev_075",
+        "rev_080"
+      ],
+      "example_reviews": [
+        "Andy voice is soothing but after two years of using Headspace I am bored of it.",
+        "Meditation streak feature is motivating but I lost my 47-day streak due to a server error.",
+        "I completed every course in the library and now feel like I have outgrown the app."
+      ]
+    },
+    {
+      "group_id": "A3",
+      "theme": "Subscription pricing, billing, and plan value",
+      "review_ids": [
+        "rev_082",
+        "rev_084",
+        "rev_086",
+        "rev_088",
+        "rev_091",
+        "rev_093",
+        "rev_094",
+        "rev_096",
+        "rev_097",
+        "rev_101",
+        "rev_104",
+        "rev_106",
+        "rev_108",
+        "rev_113",
+        "rev_114"
+      ],
+      "example_reviews": [
+        "The annual subscription at 69.99 works out to under 6 dollars a month which is reasonable.",
+        "Family plan covers 6 members at a reasonable price. Got my whole household meditating.",
+        "Worth every penny of the annual subscription. The mental health value of consistent meditation is impossible to put a price on."
+      ]
+    },
+    {
+      "group_id": "A4",
+      "theme": "App crashes, offline failures, and Android compatibility",
+      "review_ids": [
+        "rev_125",
+        "rev_129",
+        "rev_132",
+        "rev_134",
+        "rev_135",
+        "rev_137",
+        "rev_139",
+        "rev_140",
+        "rev_141",
+        "rev_142",
+        "rev_143",
+        "rev_144",
+        "rev_145",
+        "rev_149",
+        "rev_152"
+      ],
+      "example_reviews": [
+        "Cast to Chromecast feature never works properly. Audio stutters constantly when casting to my TV speakers.",
+        "Push notifications arrive hours late or not at all. My daily meditation reminder is set for 7am but it arrives at 2pm.",
+        "There is no landscape mode support on tablets. Using Headspace on my Tab S9 in landscape is impossible."
+      ]
+    },
+    {
+      "group_id": "A5",
+      "theme": "Personalization, recommendations, and content diversity",
+      "review_ids": [
+        "rev_164",
+        "rev_165",
+        "rev_167",
+        "rev_169",
+        "rev_170",
+        "rev_172",
+        "rev_173",
+        "rev_174",
+        "rev_175",
+        "rev_178",
+        "rev_180",
+        "rev_182",
+        "rev_183",
+        "rev_185",
+        "rev_186"
+      ],
+      "example_reviews": [
+        "I meditate in Spanish but the Headspace Spanish language library is a fraction of the English content.",
+        "I have been a subscriber for three years and the content library has not grown significantly in the last 18 months.",
+        "The beginner and advanced content are clearly differentiated but the intermediate zone is underdeveloped."
       ]
     }
   ]
